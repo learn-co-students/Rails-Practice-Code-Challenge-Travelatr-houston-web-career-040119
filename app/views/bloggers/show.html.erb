@@ -1,0 +1,9 @@
+<h1><%= @blogger.name %></h1>
+<p>Total Likes: <%= @blogger.total_likes %></p>
+<p>Most Popular: <%= link_to @blogger.most_likes.title, post_path(@blogger.most_likes) %></p>
+<h3>Top 5 Posts</h3>
+<p>
+  <% @blogger.top_five.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</p>
