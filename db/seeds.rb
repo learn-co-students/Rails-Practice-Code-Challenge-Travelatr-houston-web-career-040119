@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-30.times do 
+30.times do
   Destination.create({
     name: Faker::GameOfThrones.city,
     country: Faker::Address.country
@@ -22,11 +22,11 @@ end
     age: (13..100).to_a.sample
   })
 
-  (2..6).to_a.sample.times do 
+  (2..6).to_a.sample.times do
     Post.create({
       title: Faker::Hipster.sentence(3),
       content: Faker::Hipster.paragraphs(4),
-      likes: 0,
+      likes: rand(0..10),
       blogger: blogger,
       destination: Destination.all.sample
     })

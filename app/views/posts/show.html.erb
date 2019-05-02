@@ -1,0 +1,6 @@
+<h1><%= @post.title %></h1>
+<p>Written by: <%= link_to @post.blogger.name, @post.blogger %></p>
+<p>Destination: <%= link_to @post.destination.name, @post.destination %></p>
+<p><%= @post.content %></p>
+<p>Total Likes: <%= @post.likes %></p>
+<%= button_to "Like", action: 'like' %>

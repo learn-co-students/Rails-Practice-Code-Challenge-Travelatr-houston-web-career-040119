@@ -1,0 +1,4 @@
+<h1><%= @destination.name %></h1>
+<p>Destination Country: <%= @destination.country %></p>
+<p>Featured Post: <%= link_to (@destination.most_likes == "No one has reviewed this destination yet!" ? "No one has reviewed this destination yet!" : @destination.most_likes.title ), @destination.most_likes %></p>
+<p>Average Age: <%= @destination.average_age %></p>
