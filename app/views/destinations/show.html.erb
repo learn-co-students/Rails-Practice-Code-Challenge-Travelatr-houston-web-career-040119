@@ -1,0 +1,29 @@
+<h1><%= @dest.name %></h1>
+
+Country: <%= @dest.country %><br><br>
+
+<% if @recent_posts.length > 0 %>
+  Recent posts:
+  <ul>
+    <% @recent_posts.each do |rp| %>
+      <li>
+        <%= link_to rp.title, post_path(rp) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br><br>
+
+<% if @feat_post %>
+  Featured post: 
+  <%= link_to @feat_post.title, post_path(@feat_post) %>
+<% end %>
+
+<br><br>
+
+<% if @avg_age %>
+  Average age of bloggers: <%= @avg_age %>
+<% end %>
+
+<br><br>

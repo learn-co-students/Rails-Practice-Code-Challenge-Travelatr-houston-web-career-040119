@@ -1,0 +1,33 @@
+<h1><%= @blogger.name %></h1>
+
+Bio:<br>
+<%= @blogger.bio %><br><br>
+
+Total likes: <%= @total_likes %><br><br>
+
+
+<% if @feat_post %>
+Featured post: <%= link_to @feat_post.title, post_path(@feat_post) %><br><br>
+<% end %>
+
+<% if @top_destinations.length > 0 %>
+Top destinations:<br>
+<ul>
+<% @top_destinations.each do |dest| %>
+<li>
+<%= link_to dest.name, destination_path(dest) %>
+</li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @posts.length > 0 %>
+All posts by this blogger
+<ul>
+<% @posts.each do |post| %>
+<li>
+<%= link_to post.title, post_path(post) %>
+</li>
+<% end %>
+</ul>
+<% end %>
