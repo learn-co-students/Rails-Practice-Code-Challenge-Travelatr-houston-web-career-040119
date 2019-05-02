@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+
+    <% unless @set_dont_render_index_link %>
+    <%= link_to "Index", bloggers_path %><br><br>
+    <% end %>
   </body>
 </html>
